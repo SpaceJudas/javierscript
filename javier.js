@@ -6,7 +6,7 @@ var http = require('http'),
 
 //nodejitsu requires an application to respond to HTTP requests.
 //when running outside of nodejitsu, express is not needed
-serv.get('/', function(req, res){ res.send('Hello world.'); });
+serv.get('/', function(req, res){ res.send('working!'); });
 serv.listen(3000);
 
 //insert twitter develeoper credentials here
