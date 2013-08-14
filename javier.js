@@ -1,7 +1,13 @@
 #!/usr/bin/env node
 
 var http = require('http'),
-    Twit = require('twit');
+    Twit = require('twit'),
+    serv = require('express').createServer();
+
+//nodejitsu requires an application to respond to HTTP requests.
+//when running outside of nodejitsu, express is not needed
+serv.get('/', function(req, res){ res.send('Hello world.'); });
+serv.listen(3000);
 
 //insert twitter develeoper credentials here
 var T = new Twit({
@@ -54,6 +60,7 @@ function expoundWisdom() {
 	});
 };
 
+//Expound wisom when application is started
 expoundWisdom();
 //Expound wisdom once every hours
 setInterval(function() {
